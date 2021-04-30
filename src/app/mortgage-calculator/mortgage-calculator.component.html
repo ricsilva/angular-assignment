@@ -1,0 +1,78 @@
+<div class="container">
+  <h1>Mortgage Calculator</h1>
+
+  <div class="calculator-wrapper" *ngFor="let calc of calculator">
+    <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)"> -->
+      <mat-form-field appearance="fill">
+        <mat-label>Mortgage Amount</mat-label>
+        <input matInput currencyMask class="example-right-align" [(ngModel)]="mortgageAmount">
+        <span matPrefix>&nbsp;</span>
+        <span matSuffix></span>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Interest Rate</mat-label>
+        <input matInput type="number" class="example-right-align" [(ngModel)]="interestRate">
+        <span matPrefix></span>
+        <span matSuffix>&nbsp;%</span>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Amortization Period</mat-label>
+        <mat-select [(value)]="amortizationPeriodSelected">
+          <mat-option *ngFor="let period of calc.amortizationPeriod" [value]="period.value">
+            {{ period.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Payment Frequency</mat-label>
+        <mat-select [(value)]="paymentFrequencySelected">
+          <mat-option *ngFor="let frequency of calc.paymentFrequency" [value]="frequency.value">
+            {{ frequency.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" (click)="calculateMortgage()">Calculate</button>
+        </div>
+      </section>
+    <!-- </form> -->
+  </div>
+</div>
+
+<div class="calculationSummary" *ngIf="summaryOpen">
+  <h2>Calculation Summary</h2>
+
+  <table mat-table class="table-summary">
+    <tr>
+      <th mat-header-cell > Category </th>
+      <th mat-header-cell > Amortization Period </th>
+    </tr>
+    <tr>
+      <td mat-cell> Number of Payments </td>
+      <td mat-cell> {{ numberPayments }} </td>
+    </tr>
+    <tr>
+      <td mat-cell> Mortgage Payment </td>
+      <td mat-cell> {{ mortgagePayment | currency }} </td>
+    </tr>
+    <tr>
+      <td mat-cell> Principal Payment </td>
+      <td mat-cell> {{ principalPayment | currency }} </td>
+    </tr>
+    <tr>
+      <td mat-cell> Interest Payments </td>
+      <td mat-cell> {{ interestPayments | currency }} </td>
+    </tr>
+    <tr>
+      <td mat-cell> Total Cost </td>
+      <td mat-cell> {{ totalCost | currency }} </td>
+    </tr>
+
+
+  </table>
+</div>

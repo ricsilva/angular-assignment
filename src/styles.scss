@@ -1,1 +1,111 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  max-width: 330px;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  justify-content: stretch;
+  display: block;
+
+  .calculator-wrapper {
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 4px;
+    margin: 24px 0;
+    padding: 20px;
+
+    .example-container .mat-form-field + .mat-form-field {
+      margin-left: 8px;
+    }
+
+    .example-right-align {
+      text-align: right;
+    }
+
+    input.example-right-align::-webkit-outer-spin-button,
+    input.example-right-align::-webkit-inner-spin-button {
+      display: none;
+    }
+
+    input.example-right-align {
+      -moz-appearance: textfield;
+    }
+
+    .mat-form-field {
+      display: block;
+    }
+
+    section {
+      display: table;
+    }
+
+    .example-label {
+      display: table-cell;
+      font-size: 14px;
+      margin-left: 8px;
+      min-width: 120px;
+    }
+
+    .example-button-row {
+      display: table-cell;
+      width: 490px;
+    }
+
+    .example-button-row .mat-button-base {
+      margin: 8px 8px 8px 0;
+    }
+
+    .example-flex-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .example-button-container {
+      display: flex;
+      justify-content: center;
+      width: 120px;
+    }
+  }
+}
+
+.calculationSummary {
+  max-width: 300px;
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+  justify-content: stretch;
+  display: block;
+  background-color: rgb(233, 233, 233);
+  .gray {
+    color:gray;
+  }
+  .black {
+    color: black;
+  }
+
+  .table-summary {
+    border-collapse: collapse;
+    tr:first-child th {
+      border-bottom: 1px solid #585858;
+    }
+    tr td:first-child {
+      padding-right: 2rem;
+    }
+    tr td:last-child {
+      text-align: right;
+      font-weight: bold;
+    }
+    tr:last-child {
+      td {
+        border-top: 1px solid #585858;
+      }
+      td:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+}

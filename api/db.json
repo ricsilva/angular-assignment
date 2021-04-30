@@ -1,0 +1,23 @@
+{
+  "calculator": [
+    {
+      "amortizationPeriod": [
+        { "value": "1", "viewValue": "1 Year"    }, { "value": "2", "viewValue": "2 Years"   }, { "value": "3", "viewValue": "3 Years"   },
+        { "value": "4", "viewValue": "4 Years"   }, { "value": "5", "viewValue": "5 Years"   }, { "value": "6", "viewValue": "6 Years"   },
+        { "value": "7", "viewValue": "7 Years"   }, { "value": "8", "viewValue": "8 Years"   }, { "value": "9", "viewValue": "9 Years"   },
+        { "value": "10", "viewValue": "10 Years" }, { "value": "11", "viewValue": "11 Years" }, { "value": "12", "viewValue": "12 Years" },
+        { "value": "13", "viewValue": "13 Years" }, { "value": "14", "viewValue": "14 Years" }, { "value": "15", "viewValue": "15 Years" },
+        { "value": "16", "viewValue": "16 Years" }, { "value": "17", "viewValue": "17 Years" }, { "value": "18", "viewValue": "18 Years" },
+        { "value": "19", "viewValue": "19 Years" }, { "value": "20", "viewValue": "20 Years" }, { "value": "21", "viewValue": "21 Years" },
+        { "value": "22", "viewValue": "22 Years" }, { "value": "23", "viewValue": "23 Years" }, { "value": "24", "viewValue": "24 Years" },
+        { "value": "25", "viewValue": "25 Years" }, { "value": "26", "viewValue": "26 Years" }, { "value": "27", "viewValue": "27 Years" },
+        { "value": "28", "viewValue": "28 Years" }, { "value": "29", "viewValue": "29 Years" }, { "value": "30", "viewValue": "30 Years" }
+      ],
+      "paymentFrequency": [
+        { "value": "52", "viewValue": "Weekly" },
+        { "value": "26", "viewValue": "Bi-Weekly (every 2 weeks)" },
+        { "value": "12", "viewValue": "Monthly (12x per year)" }
+      ]
+    }
+  ]
+}
