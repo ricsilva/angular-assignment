@@ -1,5 +1,8 @@
 # AngularAssignment
 
+After cloning the project go to the project folder where package.json is located and in Terminal and run `npm run api` and `ng serve -o` to see the project working.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
 
 ## Development server
