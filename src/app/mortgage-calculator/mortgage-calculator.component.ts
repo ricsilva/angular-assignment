@@ -1,8 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Calculator } from 'src/app/model/calculator.model'
 import { CurrencyMaskConfig } from 'ng2-currency-mask';
+import { trigger, transition, animate, style, state } from '@angular/animations'
+
+import { Calculator } from 'src/app/model/calculator.model'
+
+type PaneType = 'left' | 'right';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: "right",
@@ -17,11 +21,28 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
 @Component({
   selector: 'app-mortgage-calculator',
   templateUrl: './mortgage-calculator.component.html',
-  styleUrls: ['./mortgage-calculator.component.scss']
+  styleUrls: ['./mortgage-calculator.component.scss'],
+
+  animations: [
+    trigger('toLeft', [
+      transition(':enter', [
+        style({ transform: 'translateX(240px)' }),
+        animate('1500ms', style({ transform: 'translateX(0)' })),
+      ])
+    ]),
+    trigger('fromRighttoLeft', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(10px)' }),
+        animate('500ms', style({ opacity: 1, transform: 'translateX(0)' })),
+      ])
+    ])
+  ]
 })
 export class MortgageCalculatorComponent implements OnInit {
 
-  summaryOpen = false;
+  activePane: PaneType = 'left';
+
+  isSummaryOpen = false;
 
   calculator: Calculator;
 
@@ -57,7 +78,7 @@ export class MortgageCalculatorComponent implements OnInit {
   }
 
   calculateMortgage() {
-    this.summaryOpen = true;
+    this.isSummaryOpen = true;
 
     let amortizationNbr = parseInt(this.amortizationPeriodSelected, 10);
     let paymentFrequencyNbr = parseInt(this.paymentFrequencySelected, 10);
